@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners | Greenlight · Mesa, AZ</title>
+<meta name="description" content="Partner with Greenlight to get your people the help they need. Reduce costs and increase employee satisfaction with a proven method known for rapid results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0d3349;--teal-mid:#1a4f6e;--green:#00c07f;--green-mid:#00a86b;
+  --green-light:#e6f9f2;--orange:#e84e1b;--navy:#0d2233;--pale:#dce8f0;
+  --pale-light:#eef4f8;--white:#ffffff;--ink:#0d2233;--muted:#5b7a8a;--border:#cddce6;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:"DM Sans",sans-serif;background:#fff;color:var(--ink);line-height:1.6;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:72px;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-name{font-family:"Nunito",sans-serif;font-size:22px;font-weight:800;color:var(--teal);}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--ink);opacity:.7;transition:opacity .2s;}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--teal);}
+.nav-cta{background:var(--teal)!important;color:#fff!important;opacity:1!important;padding:10px 22px;border-radius:8px;font-weight:700!important;}
+.nav-cta:hover{background:var(--teal-mid)!important;}
+.ann-bar{position:fixed;top:72px;left:0;right:0;z-index:99;background:var(--green);color:#fff;text-align:center;padding:9px 24px;font-size:13px;font-weight:600;}
+.ann-bar a{color:#fff;text-decoration:underline;margin-left:6px;}
+
+/* HERO */
+.page-hero{padding:160px 80px 100px;background:var(--teal);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;left:-80px;bottom:-80px;width:400px;height:400px;border-radius:50%;background:rgba(0,192,127,0.06);pointer-events:none;}
+.page-hero::after{content:'';position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;background:rgba(0,192,127,0.04);pointer-events:none;}
+.hero-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:16px;}
+.hero-h1{font-family:"Nunito",sans-serif;font-size:clamp(36px,5vw,58px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:8px;}
+.hero-h1 span{color:var(--green);}
+.hero-sub{font-family:"Nunito",sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:rgba(255,255,255,.5);margin-bottom:24px;line-height:1.2;}
+.hero-lead{font-size:18px;color:rgba(255,255,255,.7);line-height:1.7;max-width:580px;margin-bottom:40px;}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;padding:16px 36px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all .2s;}
+.btn-primary:hover{background:#d44216;transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,78,27,.35);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:15px;font-weight:600;text-decoration:none;padding:16px 24px;border:1.5px solid rgba(255,255,255,.2);border-radius:10px;transition:all .2s;}
+.btn-ghost:hover{color:#fff;border-color:rgba(255,255,255,.5);}
+
+/* VIDEO STRIP */
+.video-strip{background:var(--pale-light);padding:64px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.video-strip-text .label{margin-bottom:12px;}
+.video-strip-text h2{font-family:"Nunito",sans-serif;font-size:clamp(24px,3vw,34px);font-weight:900;color:var(--teal);margin-bottom:14px;line-height:1.2;}
+.video-strip-text p{font-size:16px;color:var(--muted);line-height:1.75;}
+.ph{background:var(--pale);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9bb5c4;}
+.ph-video{aspect-ratio:16/9;width:100%;}
+
+/* ORGS SECTION */
+.orgs-section{padding:96px 80px;}
+.section-header{margin-bottom:56px;}
+.label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green-mid);margin-bottom:14px;}
+.h2{font-family:"Nunito",sans-serif;font-size:clamp(28px,4vw,42px);font-weight:900;line-height:1.15;letter-spacing:-.5px;color:var(--teal);margin-bottom:16px;}
+.section-lead{font-size:17px;color:var(--muted);line-height:1.75;max-width:620px;}
+.orgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.org-card{border-radius:20px;overflow:hidden;border:1px solid var(--border);transition:all .25s;background:#fff;}
+.org-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,192,127,.1);}
+.org-img{height:180px;}
+.org-body{padding:26px;}
+.org-body h3{font-family:"Nunito",sans-serif;font-size:19px;font-weight:800;color:var(--teal);margin-bottom:8px;}
+.org-body p{font-size:14px;color:var(--muted);line-height:1.65;}
+
+/* WHY BAND */
+.why-band{background:var(--teal);padding:96px 80px;}
+.why-band .label{color:var(--green);}
+.why-band .h2{color:#fff;margin-bottom:12px;}
+.why-band .sub{font-size:17px;color:rgba(255,255,255,.6);margin-bottom:52px;max-width:540px;line-height:1.7;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px;transition:background .2s;}
+.why-card:hover{background:rgba(255,255,255,.1);}
+.why-icon{font-size:32px;margin-bottom:16px;}
+.why-card h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px;}
+.why-card p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65;}
+
+/* STATS STRIP */
+.stats-strip{background:var(--green);padding:56px 80px;}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;}
+.stat-num{font-family:"Nunito",sans-serif;font-size:48px;font-weight:900;color:#fff;line-height:1;margin-bottom:8px;}
+.stat-label{font-size:13px;color:rgba(255,255,255,.75);font-weight:600;line-height:1.4;}
+
+/* CONTACT FORM */
+.form-section{padding:96px 80px;background:var(--pale-light);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.form-text h2{font-family:"Nunito",sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:900;color:var(--teal);margin-bottom:16px;line-height:1.2;}
+.form-text p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:20px;}
+.form-text ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.form-text li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--ink);}
+.check-icon{width:22px;height:22px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.check-icon svg{width:11px;height:11px;color:var(--green-mid);}
+.partner-form{background:#fff;border-radius:20px;padding:40px;border:1px solid var(--border);box-shadow:0 4px 32px rgba(13,51,73,0.06);}
+.partner-form h3{font-family:"Nunito",sans-serif;font-size:22px;font-weight:800;color:var(--teal);margin-bottom:24px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;letter-spacing:.3px;}
+.form-group input,
+.form-group textarea,
+.form-group select{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:"DM Sans",sans-serif;color:var(--ink);background:#fff;transition:border-color .2s;outline:none;}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{border-color:var(--green);}
+.form-group textarea{resize:vertical;min-height:120px;}
+.form-submit{width:100%;background:var(--orange);color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;font-family:"Nunito",sans-serif;cursor:pointer;transition:all .2s;}
+.form-submit:hover{background:#d44216;transform:translateY(-1px);}
+
+/* FOOTER */
+footer{background:var(--navy);padding:52px 80px 36px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:44px;}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;margin-top:12px;margin-bottom:20px;}
+.footer-social{display:flex;gap:10px;}
+.footer-social a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;font-size:13px;transition:all .2s;}
+.footer-social a:hover{background:rgba(255,255,255,.15);color:#fff;}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px;}
+.footer-col ul{list-style:none;}
+.footer-col li{margin-bottom:9px;}
+.footer-col a{color:rgba(255,255,255,.55);text-decoration:none;font-size:14px;transition:color .2s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bottom p,.footer-bottom a{font-size:13px;color:rgba(255,255,255,.3);text-decoration:none;}
+.footer-bottom a:hover{color:rgba(255,255,255,.6);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav{padding:0 32px;}
+  .page-hero,.orgs-section,.why-band,.stats-strip,.form-section,footer{padding-left:40px;padding-right:40px;}
+  .video-strip{grid-template-columns:1fr;padding:48px 40px;}
+  .orgs-grid{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .stats-inner{grid-template-columns:1fr 1fr;gap:24px;}
+  .form-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .page-hero,.orgs-section,.why-band,.stats-strip,.form-section,footer{padding-left:24px;padding-right:24px;}
+  .orgs-grid,.why-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="ann-bar">✅ Take a quiz to see if Greenlight is right for you <a href="/quiz">Start →</a></div>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 40 40" width="36" height="36" fill="none">
+      <circle cx="20" cy="20" r="20" fill="#0d3349"/>
+      <path d="M28 20.5C28 24.6 24.4 28 20 28C15.6 28 12 24.6 12 20.5C12 16.4 15.6 13 20 13C22.5 13 24.7 14.1 26.2 15.8L23.5 18.3C22.7 17.4 21.4 16.8 20 16.8C17.8 16.8 16 18.5 16 20.5C16 22.5 17.8 24.2 20 24.2C21.8 24.2 23.3 23.1 23.8 21.6H20V18.5H28V20.5Z" fill="#00c07f"/>
+    </svg>
+    <span class="nav-logo-name">Greenlight</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/how-it-works">How It Works</a></li>
+    <li><a href="/who-it-helps">Who It Helps</a></li>
+    <li><a href="/partners" class="active">Partners</a></li>
+    <li><a href="/saf-t">SAF-T</a></li>
+    <li><a href="/about">About Us</a></li>
+    <li><a href="/contact">Contact Us</a></li>
+    <li><a href="/schedule" class="nav-cta">Schedule Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-label">Partners</div>
+  <h1 class="hero-h1">Partner with <span>Greenlight</span></h1>
+  <p class="hero-sub">Get your people the help they need.</p>
+  <p class="hero-lead">
+    Reduce costs and increase employee satisfaction with a proven method known for rapid, lasting results — without lengthy commitments or ongoing dependency.
+  </p>
+  <div class="hero-actions">
+    <a href="#partner-form" class="btn-primary">Partner with Greenlight →</a>
+    <a href="#how-it-works-video" class="btn-ghost">See how it works ↓</a>
+  </div>
+</section>
+
+<!-- VIDEO STRIP -->
+<div class="video-strip" id="how-it-works-video">
+  <div class="video-strip-text">
+    <div class="label">See It In Action</div>
+    <h2>Learn what Greenlight's method is and how it works.</h2>
+    <p>In just a few minutes, this video explains the science behind how Greenlight helps people recover quickly — and why organizations across the country are choosing to partner with us.</p>
+  </div>
+  <div class="ph ph-video">Video</div>
+</div>
+
+<!-- ORGS SECTION -->
+<section class="orgs-section">
+  <div class="section-header">
+    <div class="label">Who We Work With</div>
+    <h2 class="h2">What Types of Organizations<br>Can Benefit from Greenlight?</h2>
+    <p class="section-lead">Here is just a sampling of the organizations we partner with to support their people.</p>
+  </div>
+  <div class="orgs-grid">
+
+    <div class="org-card">
+      <div class="org-img ph">Photo</div>
+      <div class="org-body">
+        <h3>Schools</h3>
+        <p>Kids and teachers go through difficult, often traumatic events both inside and outside of school. Greenlight can help them regain focus, emotional regulation, and confidence.</p>
+      </div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-img ph">Photo</div>
+      <div class="org-body">
+        <h3>Police Departments</h3>
+        <p>Bring closure to suffering from exposure to traumatic incidents. Officers can regain confidence in their work — and return to full performance faster.</p>
+      </div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-img ph">Photo</div>
+      <div class="org-body">
+        <h3>Fire Departments</h3>
+        <p>Remove and replace images stuck from cumulative exposure to traumatic incidents first responders encounter — protecting long-term well-being and reducing burnout.</p>
+      </div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-img ph">Photo</div>
+      <div class="org-body">
+        <h3>Hospitals</h3>
+        <p>We partner with medical facilities to help ease the psychological burden of difficult events on their staff — from physicians to frontline workers.</p>
+      </div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-img ph">Photo</div>
+      <div class="org-body">
+        <h3>Counseling Clinics</h3>
+        <p>Addiction recovery, PTSD in veterans, family and relationship challenges — clinics partner with Greenlight to complement and enhance their existing programs.</p>
+      </div>
+    </div>
+
+    <div class="org-card">
+      <div class="org-img ph">Photo</div>
+      <div class="org-body">
+        <h3>Dental Practices</h3>
+        <p>Patients with strong aversion to dental work can benefit from re-working the memories behind their fear — allowing them to finally get the care they need.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY BAND -->
+<section class="why-band">
+  <div class="label">Why It Works for Organizations</div>
+  <h2 class="h2">Why Your Employees Will Prefer<br>(and Actually Use) Greenlight</h2>
+  <p class="sub">Your employees' problems are affecting your organization's performance. Here's why Greenlight gets results where other approaches stall.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🔒</div>
+      <h3>Lose the pain. Keep the knowledge.</h3>
+      <p>Employees retain full memory of what happened — they simply no longer carry the emotional weight of it. No erasing, no hypnosis, no altering reality.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🩺</div>
+      <h3>No diagnosis needed</h3>
+      <p>Employees don't need a formal diagnosis or referral to start. If they're struggling, that's enough. Low barrier means higher adoption.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤐</div>
+      <h3>No need to relive the trauma</h3>
+      <p>Unlike talk-based approaches, employees never have to verbalize or narrate their experience. Privacy is protected — and that builds trust.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">⚡</div>
+      <h3>Brief intervention</h3>
+      <p>Most people see meaningful relief in 1–5 sessions. That means less time away from work, lower ongoing costs, and faster return to full performance.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <h3>They stay in control</h3>
+      <p>The practitioner guides — but the employee decides what to replace, keep, and feel. This sense of agency dramatically improves completion rates.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📈</div>
+      <h3>Measurable outcomes</h3>
+      <p>Relief is immediate and lasting. Organizations see reduced absenteeism, improved morale, and better team performance — not just anecdotal stories.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">1–5</div>
+      <div class="stat-label">Sessions average for meaningful results</div>
+    </div>
+    <div>
+      <div class="stat-num">94%</div>
+      <div class="stat-label">Session completion rate</div>
+    </div>
+    <div>
+      <div class="stat-num">$0</div>
+      <div class="stat-label">Diagnosis required to begin</div>
+    </div>
+    <div>
+      <div class="stat-num">60–90</div>
+      <div class="stat-label">Minutes per session</div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="partner-form">
+  <div class="form-grid">
+    <div class="form-text">
+      <div class="label">Get Started</div>
+      <h2>Don't wait — partner with Greenlight today.</h2>
+      <p>Fill in the form and we'll follow up shortly to discuss how Greenlight can support your organization.</p>
+      <ul>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></span>
+          No long-term contracts required
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></span>
+          Flexible scheduling for your team
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></span>
+          On-site or remote sessions available
+        </li>
+        <li>
+          <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg></span>
+          Dedicated point of contact at Greenlight
+        </li>
+      </ul>
+    </div>
+
+    <div class="partner-form">
+      <h3>Partner with Greenlight</h3>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Jane Smith">
+      </div>
+      <div class="form-group">
+        <label for="org">Organization</label>
+        <input type="text" id="org" placeholder="Mesa Police Department">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="jane@organization.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="(480) 000-0000">
+      </div>
+      <div class="form-group">
+        <label for="org-type">Organization Type</label>
+        <select id="org-type">
+          <option value="">Select one…</option>
+          <option>School / Education</option>
+          <option>Law Enforcement</option>
+          <option>Fire Department</option>
+          <option>Hospital / Healthcare</option>
+          <option>Counseling Clinic</option>
+          <option>Dental Practice</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell us a bit about your organization and what you're looking for…"></textarea>
+      </div>
+      <button class="form-submit" type="button">Send My Message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg viewBox="0 0 40 40" width="32" height="32" fill="none">
+          <circle cx="20" cy="20" r="20" fill="#0d3349"/>
+          <path d="M28 20.5C28 24.6 24.4 28 20 28C15.6 28 12 24.6 12 20.5C12 16.4 15.6 13 20 13C22.5 13 24.7 14.1 26.2 15.8L23.5 18.3C22.7 17.4 21.4 16.8 20 16.8C17.8 16.8 16 18.5 16 20.5C16 22.5 17.8 24.2 20 24.2C21.8 24.2 23.3 23.1 23.8 21.6H20V18.5H28V20.5Z" fill="#00c07f"/>
+        </svg>
+        <span style="font-family:Nunito,sans-serif;font-size:20px;font-weight:800;color:#fff;">Greenlight</span>
+      </div>
+      <p>Practitioner-guided sessions for trauma, PTSD, anxiety, grief and more. Using the ART method. Mesa, AZ.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/greenlighttherapycenter/" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/greenlighttherapycenter/" aria-label="Instagram">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/how-it-works">How It Works</a></li>
+        <li><a href="/who-it-helps">Who It Helps</a></li>
+        <li><a href="/saf-t">SAF-T Training</a></li>
+        <li><a href="/partners">Partners</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="/our-team">Our Team</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get Help</h4>
+      <ul>
+        <li><a href="/quiz">Take the Quiz</a></li>
+        <li><a href="/intake">Intake Form</a></li>
+        <li><a href="/schedule">Schedule Now</a></li>
+        <li><a href="tel:4808184148">(480) 818-4148</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Greenlight · All Rights Reserved · Mesa, AZ</p>
+    <p><a href="/medical-disclaimer">Disclaimer</a> &nbsp;·&nbsp; <a href="/privacy-policy">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
